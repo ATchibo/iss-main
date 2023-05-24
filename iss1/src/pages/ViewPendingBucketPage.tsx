@@ -3,31 +3,30 @@ import OtherRequests from "../requests/OtherRequests";
 
 import './styles.css';
 import LocalStorageManager from "../helpers/LocalStorageManager";
-import DestinationCardUser from "../components/DestinationCardUser";
+import DestinationCardPending from "../components/DestinationCardPending";
 
-const ViewPrivateBucketPage: React.FC = () => {
+const ViewPendingBucketPage: React.FC = () => {
 
     const [bucketList, setBucketList] = useState([]);
 
     const userRole = LocalStorageManager.getRole() || '';
 
-    const fetchPrivateDestinationList = async () => {
-        await OtherRequests.getPrivateDestinations()
+    const fetchPendingDestinationList = async () => {
+        await OtherRequests.getPendingDestinations()
             .then((response) => {
                 console.log(response.data);
                 
                 setBucketList(response.data.destinationList.map((destination: any) => {
                     return (
-                        <DestinationCardUser
+                        <DestinationCardPending
                             key={destination.id}
                             id={destination.id}
                             title={destination.title}
                             description={destination.descrption}
                             location={destination.geoLocation}
+                            image={destination.image}
                             startDate={destination.startDate}
                             endDate={destination.endDate}
-                            image={destination.image}
-                            button={false}
                         />
                     );
                 }));
@@ -39,14 +38,14 @@ const ViewPrivateBucketPage: React.FC = () => {
 
 
     useEffect(() => {
-        fetchPrivateDestinationList();
+        fetchPendingDestinationList();
     }, []);
 
     return (
         <div>
             <header className="header"></header>
 
-            <h2>Private bucket list</h2>
+            <h2>Approve destinations</h2>
 
             <div className="bucket-list">
                 {bucketList}
@@ -55,4 +54,4 @@ const ViewPrivateBucketPage: React.FC = () => {
     );
 };
 
-export default ViewPrivateBucketPage;
+export default ViewPendingBucketPage;

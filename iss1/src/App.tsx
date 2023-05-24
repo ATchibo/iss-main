@@ -7,6 +7,7 @@ import ViewPublicBucketPage from './pages/ViewPublicBucketPage';
 import ViewPrivateBucketPage from './pages/ViewPrivateBucketPage';
 import AddPrivateDestPage from './pages/AddPrivateDestPage';
 import AddPublicDestPage from './pages/AddPublicDestPage';
+import ViewPendingBucketPage from './pages/ViewPendingBucketPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
               <Route path="/register" element={<RegisterPage/>} />
               <Route path="/public-list" element={<ViewPublicBucketPage/>} />
               <Route path="/private-list" element={<ViewPrivateBucketPage/>} />
+              <Route path="/pending-list" element={<ViewPendingBucketPage/>} />
               <Route path="/add-to-private-list" element={<AddPrivateDestPage/>} />
               <Route path="/add-to-public-list" element={<AddPublicDestPage/>} />
           </Routes>

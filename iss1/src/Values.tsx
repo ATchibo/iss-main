@@ -19,15 +19,16 @@ class Values {
 
     // Backend
 
-    // static backendUrl = "https://exquisite-fox.chickenkiller.com";
     static backendUrl = "http://localhost:8080";
 
     static baseBackendUrl = this.backendUrl + "/api";
-    static websocketUrl = this.backendUrl + "/ws";
 
     // Others
 
-    static publicBucketUrl = "/bucketList/public"
+    static publicBucketUrl = "/bucketList/public";
+    static privateBucketUrl = "/bucketList/private";
+    static pendingBucketUrl = "/bucketList/pending";
+    static approveDestinationUrl = "/bucketList/approve?destinationId=";
     
     // Login
     static loginUrl = "/login";

@@ -6,7 +6,8 @@ enum MenuOption {
   AddToPublicList,
   ViewPrivateList,
   AddToPrivateList,
-  ViewProfile
+  ViewProfile,
+  AddToPendingList
 }
 
 const HomePage: React.FC = () => {
@@ -30,6 +31,9 @@ const HomePage: React.FC = () => {
 			case MenuOption.AddToPrivateList:
 				window.location.href = '/add-to-private-list';
 				break;
+      case MenuOption.AddToPendingList:
+        window.location.href = '/pending-list';
+        break;
       case MenuOption.ViewProfile:
         window.location.href = '/profile';
         break;
@@ -56,7 +60,7 @@ const HomePage: React.FC = () => {
           }
           {
             userRole === 'ROLE_ADMIN' &&
-            <div className="menu-option" onClick={() => handleMenuOptionClick(MenuOption.AddToPublicList)}>
+            <div className="menu-option" onClick={() => handleMenuOptionClick(MenuOption.AddToPendingList)}>
               Approve locations
             </div>
           }
