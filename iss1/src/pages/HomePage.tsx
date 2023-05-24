@@ -1,3 +1,4 @@
+import LocalStorageManager from '../helpers/LocalStorageManager';
 import './HomePage.css'; // Import the CSS file for styling
 
 enum MenuOption {
@@ -5,9 +6,13 @@ enum MenuOption {
   AddToPublicList,
   ViewPrivateList,
   AddToPrivateList,
+  ViewProfile
 }
 
 const HomePage: React.FC = () => {
+
+    const userRole = LocalStorageManager.getRole() || '';
+
 
   	const handleMenuOptionClick = (option: MenuOption) => {
     	console.log('Menu Option:', option);
@@ -25,6 +30,9 @@ const HomePage: React.FC = () => {
 			case MenuOption.AddToPrivateList:
 				window.location.href = '/add-to-private-list';
 				break;
+      case MenuOption.ViewProfile:
+        window.location.href = '/profile';
+        break;
 			default:
 				break;
 		}
@@ -40,15 +48,30 @@ const HomePage: React.FC = () => {
           <div className="menu-option" onClick={() => handleMenuOptionClick(MenuOption.ViewPublicList)}>
             View Public List
           </div>
-          <div className="menu-option" onClick={() => handleMenuOptionClick(MenuOption.AddToPublicList)}>
-            Add Item to Public List
-          </div>
+          {
+            userRole === 'ROLE_ADMIN' &&
+            <div className="menu-option" onClick={() => handleMenuOptionClick(MenuOption.AddToPublicList)}>
+              Add Item to Public List
+            </div>
+          }
+          {
+            userRole === 'ROLE_ADMIN' &&
+            <div className="menu-option" onClick={() => handleMenuOptionClick(MenuOption.AddToPublicList)}>
+              Approve locations
+            </div>
+          }
           <div className="menu-option" onClick={() => handleMenuOptionClick(MenuOption.ViewPrivateList)}>
             View Private List
           </div>
           <div className="menu-option" onClick={() => handleMenuOptionClick(MenuOption.AddToPrivateList)}>
             Add Item to Private List
           </div>
+          {
+            userRole === 'ROLE_REGULAR' &&
+            <div className="menu-option" onClick={() => handleMenuOptionClick(MenuOption.ViewProfile)}>
+              View Profile
+            </div>
+          }
         </div>
 
     </div>

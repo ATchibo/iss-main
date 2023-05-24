@@ -17,16 +17,8 @@ export const removeAuthToken = () => {
 	LocalStorageManager.removeAuthToken();
 };
 
-export const getRefreshToken = () => {
-	return LocalStorageManager.getRefreshToken();
-};
-
 export const setRefreshToken = (token: string) => {
 	LocalStorageManager.setRefreshToken(token);
-};
-
-export const removeRefreshToken = () => {
-	LocalStorageManager.removeRefreshToken();
 };
 
 export const getApi = (BASE_URL: string) => {
@@ -40,7 +32,7 @@ export const getApi = (BASE_URL: string) => {
       const authToken = LocalStorageManager.getAuthToken();
 
       if (authToken !== null && authToken !== 'null' && authToken.length > 0) {
-        config.headers['Authorization'] = `Bearer ${authToken}`;
+        config.headers['Authorization'] = `${authToken}`;
       }
 
       try {

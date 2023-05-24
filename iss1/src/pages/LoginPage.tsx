@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './LoginPage.css'; // Import the CSS file for styling
 import LoginRequests from '../requests/LoginRequests';
+import LocalStorageManager from '../helpers/LocalStorageManager';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
@@ -19,7 +20,13 @@ const LoginPage = () => {
 
     await LoginRequests.login(username, password)
       .then((response) => {
-        console.log(response);
+
+        let token: string = response.data.jwtToken;
+        token = token.split('=')[1].split(';')[0];
+
+        LocalStorageManager.setAuthToken(token);
+        LocalStorageManager.setRole(response.data.roles[0]);
+
         window.location.href = '/';
       })
       .catch((error) => {

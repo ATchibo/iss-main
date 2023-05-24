@@ -2,16 +2,9 @@
 class LocalStorageManager {
     static authTokenPrefix: string = "auth_token";
     static refreshTokenPrefix: string = "refresh_token";
-    static userPrefix: string = "user";
+    static rolePrefix: string = "role";
     static tablePrefix: string = "table";
 
-    static setUsername(username: string) {
-        localStorage.setItem(LocalStorageManager.userPrefix, username);
-    }
-
-    static getUsername(): string | null {
-        return localStorage.getItem(LocalStorageManager.userPrefix);
-    }
 
     static setAuthToken(auth_token: string) {
         window.localStorage.setItem(LocalStorageManager.authTokenPrefix, auth_token);
@@ -30,21 +23,17 @@ class LocalStorageManager {
         window.localStorage.setItem(LocalStorageManager.refreshTokenPrefix, refresh_token);
     }
 
-    static getRefreshToken(): string | null {
-        return window.localStorage.getItem(LocalStorageManager.refreshTokenPrefix);
+    static setRole(role: string) {
+        window.localStorage.setItem(LocalStorageManager.rolePrefix, role);
     }
 
-    static removeRefreshToken() {
-        window.localStorage.removeItem(LocalStorageManager.refreshTokenPrefix);
+    static getRole(): string | null {
+        return window.localStorage.getItem(LocalStorageManager.rolePrefix);
     }
 
-    static getTableName() {
-        return window.localStorage.getItem(LocalStorageManager.tablePrefix);
+    static removeRole() {
+        window.localStorage.removeItem(LocalStorageManager.rolePrefix);
     }
-
-    static setTableName(tableName: string) {
-        window.localStorage.setItem(LocalStorageManager.tablePrefix, tableName);
-    }   
 
     static performLogoutCleaning() {
         window.localStorage.clear();

@@ -25,63 +25,10 @@ class Values {
     static baseBackendUrl = this.backendUrl + "/api";
     static websocketUrl = this.backendUrl + "/ws";
 
-    // Dealerships
-    static dealershipsBaseUrl = "/dealerships";
-    static dealershipsAllUrl = "";
-    static dealershipsByIdUrl = "/";
-    static dealershipsUpdateUrl = "";
-    static dealershipsDeleteUrl = "/";
-    static dealershipsByNameUrl = "/autocomplete";
-    static dealershipsByAvgCarPriceUrl = "/sort-by-avg-car-price";
-    static dealershipsDeleteAllUrl = "";
+    // Others
 
-    // Cars
-    static carsBaseUrl = "/cars";
-    static carsAllUrl = "";
-    static carsByIdUrl = "/";
-    static carsUpdateUrl = "";
-    static carsDeleteUrl = "/";
-    static carsWithPriceAboveUrl = "/minPrice";
-    static carsDeleteAllUrl = "";
-
-    // Employees
-    static employeesBaseUrl = "/employees";
-    static employeesAllUrl = "";
-    static employeesByIdUrl = "/";
-    static employeesUpdateUrl = "";
-    static employeesDeleteUrl = "/";
-    static employeesDeleteAllUrl = "";
-
-    // Contracts
-    static contractsBaseUrl = "/contracts";
-    static contractsAllUrl = "/";
-    static contractsByIdUrl = "/";
-    static contractsUpdateUrl = "";
-    static contractsDeleteUrl = "/";
-    static contractsDeleteAllUrl = "";
-
-    // Suppliers
-    static suppliersBaseUrl = "/suppliers";
-    static suppliersAllUrl = "/";
-    static suppliersByIdUrl = "/";
-    static suppliersUpdateUrl = "";
-    static suppliersDeleteUrl = "/";
-    static suppliersByNameUrl = "/autocomplete";
-    static suppliersByNrContractsUrl = "/by-nr-contracts";
-    static suppliersDeleteAllUrl = "";
-
-    // Users
-    static usersBaseUrl = "/users";
-    static usersByUsernameUrl = "/username";
-    static usersCountNrDealershipsUrl = "/nr-dealerships";
-    static usersCountNrEntitiesAddedUrl = "/nr-entities-added";
-    static usersCurrentUrl = "/current";
-    static usersAllUrl = "";
-    static usersUpdateRoleUrl = "/role";
-    static usersSetPageSizeUrl = "/page-size";
-
-    static usersInsertBulkDataUrl = "/run-script";
-
+    static publicBucketUrl = "/bucketList/public"
+    
     // Login
     static loginUrl = "/login";
     static registerUrl = "/register";
