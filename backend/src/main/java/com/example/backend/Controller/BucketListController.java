@@ -36,6 +36,18 @@ public class BucketListController {
         }
         return bucketListRepository.getPublicBucketList();
     }
+
+    @GetMapping("/bucketList/get")
+    public Destination getPublicBucketList(@RequestParam Long destinationId) {
+        BucketList publicBucketList = bucketListRepository.getPublicBucketList();
+        if(publicBucketList == null){
+            publicBucketList = new PublicBucketList();
+            bucketListRepository.save(publicBucketList);
+        }
+
+        return bucketListRepository.getPublicBucketList().getDestination(destinationId);
+    }
+
     @GetMapping("/bucketList/private")
     @PreAuthorize("hasRole('ROLE_REGULAR')")
     public BucketList getPrivateBucketList() {
