@@ -14,6 +14,9 @@ const HomePage: React.FC = () => {
 
     const userRole = LocalStorageManager.getRole() || '';
 
+    if (userRole === '') {
+      window.location.href = '/login';
+    }
 
   	const handleMenuOptionClick = (option: MenuOption) => {
     	console.log('Menu Option:', option);
