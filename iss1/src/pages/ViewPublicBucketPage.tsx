@@ -38,8 +38,8 @@ const ViewPublicBucketPage: React.FC = () => {
                                 title={destination.title}
                                 description={destination.descrption}
                                 location={destination.geoLocation}
-                                startDate={destination.startDate}
-                                endDate={destination.endDate}
+                                startDate={destination.startDate.toString().substring(0, 10)}
+                                endDate={destination.endDate.toString().substring(0, 10)}
                                 image={destination.image}
                                 button={true}
                             />
@@ -59,7 +59,7 @@ const ViewPublicBucketPage: React.FC = () => {
 
     return (
         <div>
-            <header className="header"></header>
+            <header onClick={() => {window.location.href = "/"}} className="header"></header>
 
             <h2>Public bucket list</h2>
 

@@ -44,7 +44,7 @@ const HomePage: React.FC = () => {
 
   return (
     <div>
-        <header className="header"></header>
+        <header onClick={() => {window.location.href = "/"}} className="header"></header>
 
         <h2>Hello, user</h2>
 
@@ -64,18 +64,24 @@ const HomePage: React.FC = () => {
               Approve locations
             </div>
           }
-          <div className="menu-option" onClick={() => handleMenuOptionClick(MenuOption.ViewPrivateList)}>
-            View Private List
-          </div>
-          <div className="menu-option" onClick={() => handleMenuOptionClick(MenuOption.AddToPrivateList)}>
-            Add Item to Private List
-          </div>
           {
+            userRole === 'ROLE_REGULAR' &&
+            <div className="menu-option" onClick={() => handleMenuOptionClick(MenuOption.ViewPrivateList)}>
+              View Private List
+            </div>
+          }
+          {
+            userRole === 'ROLE_REGULAR' &&
+            <div className="menu-option" onClick={() => handleMenuOptionClick(MenuOption.AddToPrivateList)}>
+              Add Item to Private List
+            </div>
+          }
+          {/* {
             userRole === 'ROLE_REGULAR' &&
             <div className="menu-option" onClick={() => handleMenuOptionClick(MenuOption.ViewProfile)}>
               View Profile
             </div>
-          }
+          } */}
         </div>
 
     </div>

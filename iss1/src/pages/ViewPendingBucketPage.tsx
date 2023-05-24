@@ -43,7 +43,7 @@ const ViewPendingBucketPage: React.FC = () => {
 
     return (
         <div>
-            <header className="header"></header>
+            <header onClick={() => {window.location.href = "/"}} className="header"></header>
 
             <h2>Approve destinations</h2>
 

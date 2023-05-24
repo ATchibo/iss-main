@@ -10,3 +10,37 @@
     }
   }
   
+
+  .form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .form input[type="text"],
+  .form input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border-radius: 4px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .form button:hover {
+    background-color: #45a049;
+  }
+  
+  

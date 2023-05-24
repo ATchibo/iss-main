@@ -14,7 +14,7 @@ type DestinationCardProps = {
 const DestinationCardUser = (props: DestinationCardProps) => {
 
     const addDestToPrivateList = async () => {
-        console.log(props.id)
+        window.location.href = "/add-to-private-list/" + props.id;
     }
 
     return (

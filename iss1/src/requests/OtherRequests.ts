@@ -7,8 +7,16 @@ class OtherRequests {
         return await getApi(Values.baseBackendUrl).get(Values.publicBucketUrl, {});
     }
 
+    async addPublicDestination(data: any): Promise<any> {
+        return await getApi(Values.baseBackendUrl).post(Values.publicBucketUrl, data);
+    }
+
     async getPrivateDestinations(): Promise<any> {
         return await getApi(Values.baseBackendUrl).get(Values.privateBucketUrl, {});
+    }
+
+    async addPrivateDestination(data: any): Promise<any> {
+        return await getApi(Values.baseBackendUrl).post(Values.privateBucketUrl, data);
     }
 
     async getPendingDestinations(): Promise<any> {
@@ -17,6 +25,10 @@ class OtherRequests {
 
     async approveDestination(id: number): Promise<any> {
         return await getApi(Values.baseBackendUrl).post(Values.approveDestinationUrl + id, {});
+    }
+
+    async getDestinationById(id: string): Promise<any> {
+        return await getApi(Values.baseBackendUrl).get(Values.getDestinationUrl + id, {});
     }
 }
 

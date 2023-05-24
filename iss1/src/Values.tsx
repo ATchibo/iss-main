@@ -29,6 +29,7 @@ class Values {
     static privateBucketUrl = "/bucketList/private";
     static pendingBucketUrl = "/bucketList/pending";
     static approveDestinationUrl = "/bucketList/approve?destinationId=";
+    static getDestinationUrl = "/bucketList/get?destinationId=";
     
     // Login
     static loginUrl = "/login";

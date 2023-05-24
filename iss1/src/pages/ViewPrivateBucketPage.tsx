@@ -24,8 +24,8 @@ const ViewPrivateBucketPage: React.FC = () => {
                             title={destination.title}
                             description={destination.descrption}
                             location={destination.geoLocation}
-                            startDate={destination.startDate}
-                            endDate={destination.endDate}
+                            startDate={destination.startDate.toString().substring(0, 10)}
+                            endDate={destination.endDate.toString().substring(0, 10)}
                             image={destination.image}
                             button={false}
                         />
@@ -44,7 +44,7 @@ const ViewPrivateBucketPage: React.FC = () => {
 
     return (
         <div>
-            <header className="header"></header>
+            <header onClick={() => {window.location.href = "/"}} className="header"></header>
 
             <h2>Private bucket list</h2>
 
