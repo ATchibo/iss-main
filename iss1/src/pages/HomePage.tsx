@@ -47,7 +47,16 @@ const HomePage: React.FC = () => {
 
   return (
     <div>
-        <header onClick={() => {window.location.href = "/"}} className="header"></header>
+        <header onClick={() => {window.location.href = "/"}} className="header">
+            <button
+              className="logout-button"
+              onClick={() => {
+                LocalStorageManager.performLogoutCleaning();
+                window.location.href = "/login";
+            }}>
+              Logout
+            </button>
+        </header>
 
         <h2>Hello, user</h2>
 
