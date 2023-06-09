@@ -61,7 +61,7 @@ const HomePage: React.FC = () => {
         <h2>Hello, user</h2>
 
         <div className="menu">
-          <div className="menu-option" onClick={() => handleMenuOptionClick(MenuOption.ViewPublicList)}>
+          <div className="menu-option" id="public-list-btn" onClick={() => handleMenuOptionClick(MenuOption.ViewPublicList)}>
             View Public List
           </div>
           {
@@ -88,12 +88,6 @@ const HomePage: React.FC = () => {
               Add Item to Private List
             </div>
           }
-          {/* {
-            userRole === 'ROLE_REGULAR' &&
-            <div className="menu-option" onClick={() => handleMenuOptionClick(MenuOption.ViewProfile)}>
-              View Profile
-            </div>
-          } */}
         </div>
 
     </div>

@@ -45,6 +45,7 @@ const LoginPage = () => {
         <label>
           Username:
           <input
+            id="username"
             type="text"
             value={username}
             onChange={handleUsernameChange}
@@ -54,6 +55,7 @@ const LoginPage = () => {
         <label>
           Password:
           <input
+            id="password"
             type="password"
             value={password}
             onChange={handlePasswordChange}

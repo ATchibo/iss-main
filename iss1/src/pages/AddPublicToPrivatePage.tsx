@@ -83,7 +83,7 @@ const AddPublicToPrivatePage: React.FC = () => {
                     <label htmlFor="endDate">End date</label>
                     <input type="date" id="endDate" name="endDate" />
 
-                    <button type="submit">Add destination</button>
+                    <button id='add-btn' type="submit">Add destination</button>
                 </form>
             </div>
         </div>

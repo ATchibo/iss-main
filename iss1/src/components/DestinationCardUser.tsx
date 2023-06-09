@@ -17,6 +17,9 @@ const DestinationCardUser = (props: DestinationCardProps) => {
         window.location.href = "/add-to-private-list/" + props.id;
     }
 
+    const btnId = "card-btn-" + props.id;
+    const titleId = "card-title-" + props.id;
+
     return (
         <div className="destination-card">
             <div className="destination-card-image">
@@ -24,7 +27,7 @@ const DestinationCardUser = (props: DestinationCardProps) => {
             </div>
             <div className="destination-card-info">
                 <div className="destination-card-info-title">
-                    <h3>{props.title}</h3>
+                    <h3 id={titleId}>{props.title}</h3>
                 </div>
                 <div className="destination-card-info-description">
                     <p>{props.description}</p>
@@ -39,7 +42,7 @@ const DestinationCardUser = (props: DestinationCardProps) => {
                 {
                     props.button &&
                     <div className="destination-card-info-button">
-                        <button onClick={addDestToPrivateList}>Add destination to private list</button>
+                        <button id={btnId} onClick={addDestToPrivateList}>Add destination to private list</button>
                     </div>
                 }
             </div>

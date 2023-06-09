@@ -20,7 +20,7 @@ const ViewPrivateBucketPage: React.FC = () => {
                     return (
                         <DestinationCardUser
                             key={destination.id}
-                            id={destination.id}
+                            id={response.data.destinationList.indexOf(destination)}
                             title={destination.title}
                             description={destination.descrption}
                             location={destination.geoLocation}
